@@ -28,13 +28,13 @@ podTemplate(label: podLabel,
 ) {
     node(podLabel) {
         final scmVars = checkout scm
-        final version = "versions/custom-3.7/x86_64/options"
-        final imageTag = "gcr.io/${env.GOOGLE_PROJECT}"
+        final bashbrew = "/usr/local/bin/bashbrew-entrypoint.sh" 
+        final library = "docker-images/library"
 
         stage('Build') {
             container('bashbrew') {
                 echo 'build'
-                sh("./jenkins.sh build alpine")
+                sh("${bashbrew} --library ${library}/alpine build alpine")
             }
         }
 
