@@ -41,14 +41,14 @@ podTemplate(label: podLabel,
         stage('Verify') {
             container('bashbrew') {
                 echo 'Building docker image...'
-                #sh("./build ${version}")
+                //sh("./build ${version}")
             }
         }
 
         stage('Push') {
             container('bashbrew') {
                 echo 'Push image to GCR'
-                #sh("gcloud docker -- push ${imageTag}")
+                //sh("gcloud docker -- push ${imageTag}")
             }
         }
     }
