@@ -37,21 +37,21 @@ podTemplate(label: podLabel,
         stage('Build') {
             container('bashbrew') {
                 echo 'build'
-                sh("${bashbrew} ${extra_args} --library ${library}/alpine ${build} alpine")
+                sh("${bashbrew} ${extra_args} --namespace ${namespace} --library ${library}/alpine build alpine")
             }
         }
 
         stage('Tag') {
             container('bashbrew') {
                 echo 'Tagging docker images...'
-                sh("${bashbrew} ${extra_args} --library ${library}/alpine push alpine")
+                sh("${bashbrew} ${extra_args} --namespace ${namespace} --library ${library}/alpine push alpine")
             }
         }
 
         stage('Push') {
             container('bashbrew') {
                 echo 'Push image to GCR'
-                sh("${bashbrew} ${extra_args} --library ${library}/alpine push alpine")
+                sh("${bashbrew} ${extra_args} --namespace ${namespace} --library ${library}/alpine push alpine")
             }
         }
     }
