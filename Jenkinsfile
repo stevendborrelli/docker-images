@@ -36,7 +36,7 @@ podTemplate(label: podLabel,
 
         stage('Build') {
             container('bashbrew') {
-                echo 'build'
+                echo 'Building docker images...'
                 sh("${bashbrew} ${extra_args} --library ${library}/alpine build --namespace ${namespace} alpine")
             }
         }
@@ -44,7 +44,7 @@ podTemplate(label: podLabel,
         stage('Tag') {
             container('bashbrew') {
                 echo 'Tagging docker images...'
-                sh("${bashbrew} ${extra_args} --library ${library}/alpine tag --namespace ${namespace} alpine")
+                //sh("${bashbrew} ${extra_args} --library ${library}/alpine tag --namespace ${namespace} alpine")
             }
         }
 
