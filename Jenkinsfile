@@ -32,7 +32,7 @@ podTemplate(label: podLabel,
         final command = "build"
         final library = "library"
         final extra_args = "--debug" 
-        final namespace = "gcr.io/kubernetesengine" 
+        final namespace = "steve" 
 
         stage('Build') {
             container('bashbrew') {
