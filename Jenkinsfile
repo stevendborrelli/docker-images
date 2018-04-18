@@ -29,7 +29,7 @@ podTemplate(label: podLabel,
     node(podLabel) {
         final scmVars = checkout scm
         final bashbrew = "/usr/local/bin/bashbrew-entrypoint.sh" 
-        final library = "docker-images/library"
+        final library = "library"
 
         stage('Build') {
             container('bashbrew') {
