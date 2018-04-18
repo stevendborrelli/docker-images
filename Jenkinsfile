@@ -34,6 +34,7 @@ podTemplate(label: podLabel,
         stage('Build') {
             container('bashbrew') {
                 echo 'build'
+                sh("ls -lR")
                 sh("${bashbrew} --library ${library}/alpine build alpine")
             }
         }
