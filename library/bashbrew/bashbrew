@@ -1,0 +1,11 @@
+
+
+Maintainers: Docker (@docker-library)
+GitRepo: https://github.com/docker-library/official-images.git
+GitFetch: refs/heads/master
+GitCommit: e2dbf7433c4661d2e6323623e067b8c0883bf0db
+
+Tags: autobuild
+Architectures: amd64
+amd64-GitFetch: refs/heads/master
+amd64-GitCommit: e2dbf7433c4661d2e6323623e067b8c0883bf0db
