@@ -40,7 +40,7 @@ podTemplate(label: podLabel,
             container('bashbrew') {
                 echo 'Building docker images...'
                 images.each {
-                    echo 'building ${it}
+                    echo 'building ${it}'
                     sh("${bashbrew} ${extra_args} --library ${library}/${it} build --namespace ${namespace} ${it}")
                 }
             }
