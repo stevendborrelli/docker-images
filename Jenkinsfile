@@ -44,13 +44,14 @@ podTemplate(label: podLabel,
         stage('Tag') {
             container('bashbrew') {
                 echo 'Tagging docker images...'
-                sh("${bashbrew} ${extra_args} --library ${library}/alpine push --namespace ${namespace} alpine")
+                sh("${bashbrew} ${extra_args} --library ${library}/alpine tag --namespace ${namespace} alpine")
             }
         }
 
         stage('Push') {
             container('bashbrew') {
                 echo 'Push image to GCR'
+                sh("cat /.dockercfg")
                 sh("${bashbrew} ${extra_args} --library ${library}/alpine push --namespace ${namespace} alpine")
             }
         }
