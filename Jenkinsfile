@@ -34,10 +34,15 @@ podTemplate(label: podLabel,
         final extra_args = "--debug" 
         final namespace = "steve" 
 
+        def images = ["alpine", "bashbrew", "ubuntu"]
+
         stage('Build') {
             container('bashbrew') {
                 echo 'Building docker images...'
-                sh("${bashbrew} ${extra_args} --library ${library}/alpine build --namespace ${namespace} alpine")
+                images.each {
+                    echo 'building ${it}
+                    sh("${bashbrew} ${extra_args} --library ${library}/${it} build --namespace ${namespace} ${it}")
+                }
             }
         }
 
