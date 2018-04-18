@@ -32,7 +32,7 @@ podTemplate(label: podLabel,
         final command = "build"
         final library = "library"
         final extra_args = "--debug" 
-        final namespace = "steve" 
+        final namespace = "gcr.io/kubernetesengine" 
 
         stage('Build') {
             container('bashbrew') {
@@ -41,17 +41,17 @@ podTemplate(label: podLabel,
             }
         }
 
-        stage('Verify') {
+        stage('Tag') {
             container('bashbrew') {
-                echo 'Building docker image...'
-                //sh("./build ${version}")
+                echo 'Tagging docker images...'
+                sh("${bashbrew} ${extra_args} --library ${library}/alpine push alpine")
             }
         }
 
         stage('Push') {
             container('bashbrew') {
                 echo 'Push image to GCR'
-                //sh("gcloud docker -- push ${imageTag}")
+                sh("${bashbrew} ${extra_args} --library ${library}/alpine push alpine")
             }
         }
     }
