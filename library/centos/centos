@@ -1,0 +1,29 @@
+Maintainers: The CentOS Project <cloud-ops@centos.org> (@CentOS)
+GitRepo: https://github.com/CentOS/sig-cloud-instance-images.git
+Directory: docker
+Constraints: !aufs
+
+Tags: latest, centos7, 7
+GitFetch: refs/heads/CentOS-7
+GitCommit: 45cccc8f40650e860852cfe9054eefa5a4c0dc54
+arm32v7-GitFetch: refs/heads/CentOS-7armhfp
+arm32v7-GitCommit: c9aa692195cf89883e5bd95348e6faa176c85c81
+arm64v8-GitFetch: refs/heads/CentOS-7arm64
+arm64v8-GitCommit: 6159fd79e6d041cb64c49068f642d1055f684c04
+ppc64le-GitFetch: refs/heads/CentOS-7ppc64le
+ppc64le-GitCommit: cf34cbd953c8dbff543c8926309fe0a1e33670af
+i386-GitFetch: refs/heads/CentOS-7i386
+i386-GitCommit: 87d39d0110c3a251149aa6335919a956de160853
+Architectures: amd64
+
+Tags: centos7.4.1708, 7.4.1708
+GitFetch: refs/heads/CentOS-7.4.1708
+GitCommit: 66add29c188e42d4d855f4d4acdb2b73d547edb6
+
+Tags: centos6.9, 6.9
+GitFetch: refs/heads/CentOS-6.9
+GitCommit: 4f329fe087b0152df26344cecee9ba30b03b1a7b
+
+Tags: centos6.8, 6.8
+GitFetch: refs/heads/CentOS-6.8
+GitCommit: f32666d2af356ed6835942ed753a4970e18bca94

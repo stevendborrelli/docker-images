@@ -34,7 +34,7 @@ podTemplate(label: podLabel,
         final extra_args = "--debug" 
         final namespace = "steve" 
 
-        def images = ["alpine", "bashbrew", "ubuntu"]
+        def images = ["alpine", "bashbrew", "centos", "ubuntu"]
 
         stage('Build') {
             container('bashbrew') {
