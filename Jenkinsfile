@@ -29,13 +29,15 @@ podTemplate(label: podLabel,
     node(podLabel) {
         final scmVars = checkout scm
         final bashbrew = "/usr/local/bin/bashbrew-entrypoint.sh" 
+        final command = "build"
         final library = "library"
-        final debug = "--debug" 
+        final extra_args = "--debug" 
+        final namespace = "steve" 
 
         stage('Build') {
             container('bashbrew') {
                 echo 'build'
-                sh("${bashbrew} ${debug} --library ${library}/alpine build alpine")
+                sh("${bashbrew} ${extra_args} --library ${library}/alpine ${build} alpine")
             }
         }
 
