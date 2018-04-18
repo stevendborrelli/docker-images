@@ -56,7 +56,7 @@ podTemplate(label: podLabel,
         stage('Push') {
             container('bashbrew') {
                 echo 'Push image to docker registry ${namespace}'
-                sh("${bashbrew} ${extra_args} --library ${library}/alpine push --namespace ${namespace} alpine")
+//                sh("${bashbrew} ${extra_args} --library ${library}/alpine push --namespace ${namespace} alpine")
             }
         }
     }
