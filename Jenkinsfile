@@ -34,7 +34,7 @@ podTemplate(label: podLabel,
         stage('Build') {
             container('bashbrew') {
                 echo 'build'
-                sh("./build.sh alpine")
+                sh("./jenkins.sh build alpine")
             }
         }
 
